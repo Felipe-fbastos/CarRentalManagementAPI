@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "CarRentalManagementAPI.Controllers.ClientController",
+    "Method": "Login",
+    "RelativePath": "Client/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CarRentalManagementAPI.DTO.Client.ClientLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalManagementAPI.DTO.Client.ClientLoginResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CarRentalManagementAPI.Controllers.ClientController",
+    "Method": "SignUp",
+    "RelativePath": "Client/SignUp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CarRentalManagementAPI.DTO.Client.ClientSignUpDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalManagementAPI.DTO.Client.ClientSignUpDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
