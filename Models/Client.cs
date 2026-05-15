@@ -19,5 +19,12 @@ namespace CarLocationManagementAPI.Models
         public TypeUser TypeUser { get; set; }
         [JsonIgnore]
         public List<Rental> Rentals { get; set; } = new List<Rental>();
+
+        public bool IsDelete { get; private set; }
+
+        public void Delete()
+        {
+            IsDelete = true;
+        }
     }
 }

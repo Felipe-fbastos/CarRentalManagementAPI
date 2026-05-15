@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarRentalManagementAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260513194957_MudandoCampoBirthDay")]
-    partial class MudandoCampoBirthDay
+    [Migration("20260514234444_AddFieldPriceInCar")]
+    partial class AddFieldPriceInCar
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,18 +37,26 @@ namespace CarRentalManagementAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ManufacturingYear")
                         .HasColumnType("int");
 
-                    b.Property<int>("Model")
-                        .HasColumnType("int");
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PlateNumber")
                         .IsRequired()
                         .HasColumnType("char(7)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(13,2)");
 
                     b.HasKey("Id");
 
@@ -66,8 +74,8 @@ namespace CarRentalManagementAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("BirthDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("CPF")
                         .IsRequired()
@@ -76,6 +84,9 @@ namespace CarRentalManagementAPI.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -128,7 +139,7 @@ namespace CarRentalManagementAPI.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(13,2)");
 
                     b.HasKey("Id");
 
