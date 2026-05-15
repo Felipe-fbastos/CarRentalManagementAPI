@@ -56,6 +56,23 @@ namespace CarRentalManagementAPI.Data
                 .HasColumnType("char(7)")
                 .IsRequired();
 
+            modelBuilder.Entity<Car>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(13,2)")
+                .IsRequired();
+
+            modelBuilder.Entity<Rental>()
+                .Property(p => p.TotalPrice)
+                .HasColumnType("decimal(13,2)")
+                .IsRequired();
+
+            // Ignora os carros que tem o campo IsDelete como true
+            modelBuilder.Entity<Car>()
+                .HasQueryFilter(c => !c.IsDeleted);
+
+            modelBuilder.Entity<Client>()
+                .HasQueryFilter(c => !c.IsDelete);
+
             base.OnModelCreating(modelBuilder);
         }
     }

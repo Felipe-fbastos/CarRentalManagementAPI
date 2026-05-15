@@ -7,6 +7,7 @@ C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagemen
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\CarRentalManagementAPI.pdb
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\BCrypt-Net-Next.dll
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\Mapster.dll
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\Mapster.Core.dll
@@ -131,6 +132,7 @@ C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagemen
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.csproj.CoreCompileInputs.cache
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.sourcelink.json
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\staticwebassets\msbuild.CarRentalManagementAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -145,4 +147,3 @@ C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagemen
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.pdb
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\CarRentalManagementAPI.genruntimeconfig.cache
 C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\obj\Debug\net8.0\ref\CarRentalManagementAPI.dll
-C:\Users\Felipe\Desktop\Estudos_C#\CarLocationManagementAPI\CarLocationManagementAPI\bin\Debug\net8.0\BCrypt-Net-Next.dll

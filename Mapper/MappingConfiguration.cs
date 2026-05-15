@@ -1,4 +1,6 @@
-﻿using Mapster;
+﻿using CarLocationManagementAPI.Models;
+using CarRentalManagementAPI.DTO.Car;
+using Mapster;
 
 namespace CarRentalManagementAPI.Mapper
 {
@@ -8,6 +10,11 @@ namespace CarRentalManagementAPI.Mapper
         {
 
             services.AddMapster();
+
+            // Faz o mapster aceitar valores nulos para fazer updates parciais
+            TypeAdapterConfig<CarUpdateDTO, Car>
+                .NewConfig()
+                .IgnoreNullValues(true);
 
             return services;
         }

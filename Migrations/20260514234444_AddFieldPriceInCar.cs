@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarRentalManagementAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class initalCreate : Migration
+    public partial class AddFieldPriceInCar : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,11 +17,13 @@ namespace CarRentalManagementAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", nullable: false),
-                    Model = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ManufacturingYear = table.Column<int>(type: "int", nullable: false),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PlateNumber = table.Column<string>(type: "char(7)", nullable: false)
+                    PlateNumber = table.Column<string>(type: "char(7)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(13,2)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,7 +42,9 @@ namespace CarRentalManagementAPI.Migrations
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Passoword = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TypeUser = table.Column<int>(type: "int", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,7 +61,7 @@ namespace CarRentalManagementAPI.Migrations
                     IdCar = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    TotalPrice = table.Column<decimal>(type: "decimal(13,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -83,9 +87,15 @@ namespace CarRentalManagementAPI.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clients_Email_CPF",
+                name: "IX_Clients_CPF",
                 table: "Clients",
-                columns: new[] { "Email", "CPF" },
+                column: "CPF",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_Email",
+                table: "Clients",
+                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(
