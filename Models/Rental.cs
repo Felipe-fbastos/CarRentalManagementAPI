@@ -9,8 +9,8 @@ namespace CarRentalManagementAPI.Models
         public Client Client { get; set; }
         public int IdCar { get; set; }
         public Car Car { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateOnly StartDate { get; set; }
+        public DateOnly EndDate { get; set; }
         public decimal TotalPrice { get; set; }
 
     }

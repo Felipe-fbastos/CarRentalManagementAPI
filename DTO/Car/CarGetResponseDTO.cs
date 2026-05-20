@@ -2,6 +2,7 @@
 {
     public class CarGetResponseDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
         public int ManufacturingYear { get; set; }
