@@ -189,17 +189,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CarCreateDTO"
+                  "$ref": "#/components/schemas/CarGetResponseDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CarCreateDTO"
+                  "$ref": "#/components/schemas/CarGetResponseDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CarCreateDTO"
+                  "$ref": "#/components/schemas/CarGetResponseDTO"
                 }
               }
             }
@@ -274,7 +274,7 @@
         }
       }
     },
-    "/client/id:int": {
+    "/client/{id}": {
       "delete": {
         "tags": [
           "Client"
@@ -282,7 +282,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -291,24 +292,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClientGetResponseDTO"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClientGetResponseDTO"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClientGetResponseDTO"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -391,17 +375,141 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClientLoginResponse"
+                  "$ref": "#/components/schemas/ClientLoginResponseDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClientLoginResponse"
+                  "$ref": "#/components/schemas/ClientLoginResponseDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClientLoginResponse"
+                  "$ref": "#/components/schemas/ClientLoginResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Rental": {
+      "get": {
+        "tags": [
+          "Rental"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RentalGetReponseDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RentalGetReponseDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RentalGetReponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Rental"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentalCreateDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentalCreateDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentalCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Rental/{id}": {
+      "get": {
+        "tags": [
+          "Rental"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalGetReponseDTO"
                 }
               }
             }
@@ -445,6 +553,10 @@
       "CarGetResponseDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -502,6 +614,10 @@
       "ClientGetResponseDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -531,7 +647,7 @@
         },
         "additionalProperties": false
       },
-      "ClientLoginResponse": {
+      "ClientLoginResponseDTO": {
         "type": "object",
         "properties": {
           "token": {
@@ -558,7 +674,7 @@
           },
           "birthDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "email": {
             "type": "string",
@@ -574,6 +690,58 @@
           },
           "typeUser": {
             "$ref": "#/components/schemas/TypeUser"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentalCreateDTO": {
+        "type": "object",
+        "properties": {
+          "idClient": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCar": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentalGetReponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nameClient": {
+            "type": "string",
+            "nullable": true
+          },
+          "nameCar": {
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

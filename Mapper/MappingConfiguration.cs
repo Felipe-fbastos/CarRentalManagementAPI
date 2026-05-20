@@ -1,5 +1,7 @@
 ﻿using CarLocationManagementAPI.Models;
 using CarRentalManagementAPI.DTO.Car;
+using CarRentalManagementAPI.DTO.Rental;
+using CarRentalManagementAPI.Models;
 using Mapster;
 
 namespace CarRentalManagementAPI.Mapper
@@ -15,6 +17,12 @@ namespace CarRentalManagementAPI.Mapper
             TypeAdapterConfig<CarUpdateDTO, Car>
                 .NewConfig()
                 .IgnoreNullValues(true);
+
+            
+            TypeAdapterConfig<Rental, RentalGetReponseDTO>
+                .NewConfig()
+                .Map(destino => destino.NameClient, scr => scr.Client.Name)
+                .Map(destino => destino.NameCar, scr => scr.Car.Name);
 
             return services;
         }

@@ -1,6 +1,6 @@
 ﻿namespace CarRentalManagementAPI.DTO.Client
 {
-    public class ClientLoginResponse
+    public class ClientLoginResponseDTO
     {
         public string Token { get; set; }
     }

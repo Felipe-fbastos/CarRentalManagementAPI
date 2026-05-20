@@ -43,7 +43,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             )
         };
     });
+
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<CarService>();
+builder.Services.AddScoped<RentalService>();
 
 var app = builder.Build();
 
